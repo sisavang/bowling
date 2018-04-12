@@ -20,15 +20,17 @@ public class Jeu {
 		String test = "";
 		int resultat = 0;
 		for (int i = 0; i < tabJoueur1.size(); i++) {
+			//Lorsque manche 10, 11 et 12 sont des Strike
 			if (i >= 9 && i <= 11 && tabJoueur1.get(i).isStrike()) {
+				resultat += (tabJoueur1.get(i).sommeTuple());
+			//Lorsque manche 10 et 11 Strike et que manche 12 n'est pas un strike
+			} else if (i == 11 && tabJoueur1.get(i-1).isStrike()){ 
 				resultat += (tabJoueur1.get(i).sommeTuple());
 			} else if (i == 10 && tabJoueur1.get(i - 1).isStrike()) {
 				resultat += (tabJoueur1.get(i).sommeTuple());
 			} else if (i == 9 && tabJoueur1.get(i).isSpare() && i + 1 < tabJoueur1.size()) {
 				resultat += tabJoueur1.get(i).sommeTuple() + (tabJoueur1.get(i + 1).getL());
-				System.out.println("allo");
 			} else if (i < 10) {
-
 				if (tabJoueur1.get(i).isStrike()) {
 					if (i + 1 < tabJoueur1.size()) {
 						if (tabJoueur1.get(i + 1).isStrike()) {
@@ -103,17 +105,18 @@ public class Jeu {
 		 * jeu.ajouterScoreJoueur1(5, 5); jeu.ajouterScoreJoueur1(5, 5);
 		 * jeu.ajouterScoreJoueur1(3, 0);
 		 */
-		jeu.ajouterScoreJoueur1(10, 0);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
-		jeu.ajouterScoreJoueur1(4, 4);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(10,0);
+		jeu.ajouterScoreJoueur1(10,0);
+		jeu.ajouterScoreJoueur1(5,0);
 		System.out.println(jeu.scoreJoueur1());
 	}
 }

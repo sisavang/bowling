@@ -152,6 +152,24 @@ public class exercice1 {
 	}
 	
 	@Test
+	public void uneMancheEnPlusStrikeManche10StrikeManche11Point5Manche12() throws Exception {
+		Jeu jeu = new Jeu();
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(10,0);
+		jeu.ajouterScoreJoueur1(10,0);
+		jeu.ajouterScoreJoueur1(5,0);
+		assertTrue(jeu.scoreJoueur1() == 25);
+	}
+	
+	@Test
 	public void score152AvecSpareALaFin() throws Exception {
 		Jeu jeu = new Jeu();
 		jeu.ajouterScoreJoueur1(3,5);
@@ -186,7 +204,7 @@ public class exercice1 {
 	}
 
 	@Test
-	public void errMoinsDe11MancheQuandStrike() throws Exception {
+	public void err11MancheMaxQuandStrikeManche10() throws Exception {
 		thrown.expect( Exception.class );
 	    thrown.expectMessage("Il ne peut y a avoir que 12 manches sans un strike avant");
 		Jeu jeu = new Jeu();
