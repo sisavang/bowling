@@ -133,24 +133,7 @@ public class exercice1 {
 		jeu.ajouterScoreJoueur1(4,4);
 		jeu.ajouterScoreJoueur1(4,4);
 	}
-	
-	@Test
-	public void unCoupEnPlusQuandSpareALaManche10() throws Exception {
-		Jeu jeu = new Jeu();
-		jeu.ajouterScoreJoueur1(1,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(0,0);
-		jeu.ajouterScoreJoueur1(5,5);
-		jeu.ajouterScoreJoueur1(2,0);
-		assertTrue(jeu.scoreJoueur1() == 15);
-	}
-	
+		
 	@Test
 	public void uneMancheEnPlusQuandStrikeALaManche10() throws Exception {
 		Jeu jeu = new Jeu();
@@ -165,9 +148,43 @@ public class exercice1 {
 		jeu.ajouterScoreJoueur1(0,0);
 		jeu.ajouterScoreJoueur1(10,0);
 		jeu.ajouterScoreJoueur1(2,2);
-		assertTrue(jeu.scoreJoueur1() == 19);
+		assertTrue(jeu.scoreJoueur1() == 15);
 	}
 	
+	@Test
+	public void score152AvecSpareALaFin() throws Exception {
+		Jeu jeu = new Jeu();
+		jeu.ajouterScoreJoueur1(3,5);
+		jeu.ajouterScoreJoueur1(7,3);
+		jeu.ajouterScoreJoueur1(9,0);
+		jeu.ajouterScoreJoueur1(10,0);
+		jeu.ajouterScoreJoueur1(5,4);
+		jeu.ajouterScoreJoueur1(10,0);
+		jeu.ajouterScoreJoueur1(10,0);
+		jeu.ajouterScoreJoueur1(5,5);
+		jeu.ajouterScoreJoueur1(5,5);
+		jeu.ajouterScoreJoueur1(5,5);
+		jeu.ajouterScoreJoueur1(3,0);
+		assertTrue(jeu.scoreJoueur1() == 152);
+	}
+	
+	@Test
+	public void score13AvecSpareALaFin() throws Exception {
+		Jeu jeu = new Jeu();
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(0,0);
+		jeu.ajouterScoreJoueur1(5,5);
+		jeu.ajouterScoreJoueur1(3,0);
+		assertTrue(jeu.scoreJoueur1() == 13);
+	}
+
 	@Test
 	public void errMoinsDe11MancheQuandStrike() throws Exception {
 		thrown.expect( Exception.class );
