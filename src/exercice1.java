@@ -87,7 +87,7 @@ public class exercice1 {
 		jeu.ajouterScoreJoueur1(10,0);
 		jeu.ajouterScoreJoueur1(10,0);
 
-		assertTrue(jeu.scoreJoueur1() == 45);
+		assertTrue(jeu.scoreJoueur1() == 300);
 	}
 	
 	@Test

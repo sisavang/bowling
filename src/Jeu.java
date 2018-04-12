@@ -26,12 +26,13 @@ public class Jeu {
 		 */
 		int resultat = 0;
 		for (int i = 0; i < tabJoueur1.size(); i++) {
-
-			if (i > 9 && i < 12) {
+			if (i == 10 && tabJoueur1.get(i).isStrike()) {
 				resultat += (tabJoueur1.get(i).sommeTuple());
-			}
-
-			else {
+			} else if (i == 11 && tabJoueur1.get(i).isStrike()) {
+				resultat += (tabJoueur1.get(i).sommeTuple());
+			} else if (i == 9 && tabJoueur1.get(i).isStrike()) {
+				resultat += (tabJoueur1.get(i).sommeTuple());
+			} else {
 				if (tabJoueur1.get(i).isStrike()) {
 					if (i + 1 < tabJoueur1.size()) {
 						if (tabJoueur1.get(i + 1).isStrike()) {
@@ -39,13 +40,15 @@ public class Jeu {
 								resultat += tabJoueur1.get(i + 2).getL();
 							}
 						}
-						resultat +=  tabJoueur1.get(i + 1).sommeTuple();
+						resultat += tabJoueur1.get(i + 1).sommeTuple();
+					}
+				}
+				if (tabJoueur1.get(i).isSpare()) {
+					if (i + 1 < tabJoueur1.size()) {
+						resultat += tabJoueur1.get(i + 1).getL();
 					}
 				}
 				resultat += (tabJoueur1.get(i).sommeTuple());
-				if (tabJoueur1.get(i - 1).isSpare()) { 
-					resultat += tabJoueur1.get(i).getL();
-				} 
 			}
 		}
 		return resultat;
@@ -91,19 +94,20 @@ public class Jeu {
 
 	public static void main(String[] args) throws Exception {
 		Jeu jeu = new Jeu();
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);
-		/*jeu.ajouterScoreJoueur1(10,0);
-		jeu.ajouterScoreJoueur1(10,0);*/
-		
+
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+		jeu.ajouterScoreJoueur1(10, 0);
+
 		System.out.println(jeu.scoreJoueur1());
 	}
 }
