@@ -118,7 +118,7 @@ public class exercice1 {
 	@Test
 	public void nombreDeMancheInf10() throws Exception {
 		thrown.expect( Exception.class );
-	    thrown.expectMessage("Il ne peut y a avoir que 10 manches dans le cas nominal");
+	    thrown.expectMessage("Il ne peut y a avoir que 11 manches sans un strike ou spare");
 	    
 		Jeu jeu = new Jeu();
 		jeu.ajouterScoreJoueur1(10,0);
@@ -188,7 +188,7 @@ public class exercice1 {
 	@Test
 	public void errMoinsDe11MancheQuandStrike() throws Exception {
 		thrown.expect( Exception.class );
-	    thrown.expectMessage("Il ne peut y a avoir que 10 manches dans le cas nominal");
+	    thrown.expectMessage("Il ne peut y a avoir que 12 manches sans un strike avant");
 		Jeu jeu = new Jeu();
 		jeu.ajouterScoreJoueur1(1,0);
 		jeu.ajouterScoreJoueur1(0,0);
@@ -207,7 +207,7 @@ public class exercice1 {
 	@Test
 	public void err11MancheMaxQuandStrikePuisSPare() throws Exception {
 		thrown.expect( Exception.class );
-	    thrown.expectMessage("Il ne peut y a avoir que 10 manches dans le cas nominal");
+	    thrown.expectMessage("Il ne peut y a avoir que 12 manches sans un strike avant");
 		Jeu jeu = new Jeu();
 		jeu.ajouterScoreJoueur1(1,0);
 		jeu.ajouterScoreJoueur1(0,0);
@@ -226,7 +226,7 @@ public class exercice1 {
 	@Test
 	public void err11MancheMaxQuandSpare() throws Exception {
 		thrown.expect( Exception.class );
-	    thrown.expectMessage("Il ne peut y a avoir 12 manches");
+	    thrown.expectMessage("Il ne peut y a avoir que 12 manches sans un strike avant");
 		Jeu jeu = new Jeu();
 		jeu.ajouterScoreJoueur1(1,0);
 		jeu.ajouterScoreJoueur1(0,0);
@@ -238,7 +238,7 @@ public class exercice1 {
 		jeu.ajouterScoreJoueur1(0,0);
 		jeu.ajouterScoreJoueur1(0,0);
 		jeu.ajouterScoreJoueur1(5,5);
-		jeu.ajouterScoreJoueur1(2,2);
+		jeu.ajouterScoreJoueur1(2,0);
 		jeu.ajouterScoreJoueur1(2,2);
 	}
 }
