@@ -38,7 +38,7 @@ public class exercice1 {
 	@Rule public ExpectedException thrown= ExpectedException.none();
 
 	@Test
-	public void sommeDesValeursTuplesSupérieurA10() throws Exception {
+	public void sommeDesValeursTuplesSuperieurA10() throws Exception {
 	    thrown.expect( Exception.class );
 	    thrown.expectMessage("tuple ne peut pas etre sup a 10");
 	    
