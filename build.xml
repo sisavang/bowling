@@ -40,7 +40,7 @@
     </target>
 	
 	<target name="test" depends="compile">
-		<javac srcdir="${dir.test}" destdir="${dir.classes}">
+		<javac srcdir="${dir.src}" destdir="${dir.classes}">
 			<classpath refid="classpath.test"/>
 		</javac>
     </target>
