@@ -3,6 +3,8 @@
     <property name="dir.src"     value="src"/>
 
     <property name="dir.build"   value="build"/>
+	
+	<property name="dir.test"   value="test"/>
 
     <property name="dir.classes" value="${dir.build}/classes"/>
 
@@ -32,7 +34,7 @@
     <target name="compile">
 
         <mkdir dir="${dir.classes}"/>
-
+		<mkdir dir="${dir.src}"/>
         <javac srcdir="${dir.src}" destdir="${dir.classes}">
 			<classpath refid="classpath.test"/>
 		</javac>
@@ -40,7 +42,8 @@
     </target>
 	
 	<target name="test" depends="compile">
-		<javac srcdir="${dir.src}" destdir="${dir.classes}">
+		<mkdir dir="${dir.test}"/>
+		<javac srcdir="${dir.test}" destdir="${dir.classes}">
 			<classpath refid="classpath.test"/>
 		</javac>
     </target>
