@@ -1,2 +1,0 @@
-Sisavang Soumpholphakdy
-Aparicio Benjamin
