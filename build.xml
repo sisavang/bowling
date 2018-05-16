@@ -11,8 +11,15 @@
 
 
     <property name="main-class"  value="cc.engeld.HelloWorld"/>
-
-
+	
+	<property name="lib.dir"  value="./lib"/>
+	
+	<path id="classpath.test">
+		<pathelement location="${lib.dir}/apiguardian-api-1.0.0.jar"/>
+		<pathelement location="${lib.dir}/junit-jupiter-api-5.0.0.jar"/>
+		<pathelement location="${lib.dir}/junit-platform-commons-1.0.0.jar"/>
+		<pathelement location="${lib.dir}/opentest4j-1.0.0.jar"/>
+	</path>
 
     <target name="clean">
 
@@ -26,13 +33,16 @@
 
         <mkdir dir="${dir.classes}"/>
 
-        <javac srcdir="${dir.src}" destdir="${dir.classes}"/>
+        <javac srcdir="${dir.src}" destdir="${dir.classes}">
+			<classpath refid="classpath.test"/>
+		</javac>
 
     </target>
 	
 	<target name="test" depends="compile">
-
-
+		<javac srcdir="${dir.test}" destdir="${dir.classes}">
+			<classpath refid="classpath.test"/>
+		</javac>
     </target>
 
 
