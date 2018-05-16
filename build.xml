@@ -17,10 +17,8 @@
 	<property name="lib.dir"  value="./lib"/>
 	
 	<path id="classpath.test">
-		<pathelement location="${lib.dir}/apiguardian-api-1.0.0.jar"/>
-		<pathelement location="${lib.dir}/junit-jupiter-api-5.0.0.jar"/>
-		<pathelement location="${lib.dir}/junit-platform-commons-1.0.0.jar"/>
-		<pathelement location="${lib.dir}/opentest4j-1.0.0.jar"/>
+		<pathelement location="${lib.dir}/junit.jar"/>
+		<pathelement location="${lib.dir}/org.hamcrest.core.jar"/>
 	</path>
 
     <target name="clean">
